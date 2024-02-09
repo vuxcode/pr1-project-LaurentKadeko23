@@ -12,7 +12,12 @@ function addTask(){
     // whatever I text we add into the input field will be added into the list-container
     li.innerHTML = inputBox.value;
     listContainer.appendChild(li);
-
-  
+      // create a plceholder element where i press the x it will delete the information
+      let span = document.createElement("span")
+      span.innerHTML = "\u00d7"
+      li.appendChild(span)
   }
+
+  // this will remove the list inside the input field so I can add more
+  inputBox.value = '';
 }
