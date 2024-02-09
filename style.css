@@ -40,10 +40,11 @@
   border: none;
   outline: none;
   padding: 15px 40px;
-  border-radius: 5px ;
+  border-radius: 10rem ;
   background-color: #f27510;
   color: white;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 .todo-app button:hover{
