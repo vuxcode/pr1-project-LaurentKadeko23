@@ -23,10 +23,12 @@ function addTask(){
 }
 
 listContainer.addEventListener("click", function(e){
+  // When you press on any list element you will be able to mark it as done or undone
   if(e.target.tagName === "LI"){
     e.target.classList.toggle("checked")
   }
 
+  // if you press on the x you will remove the any list 
   else if(e.target.tagName === "SPAN") {
     e.target.parentElement.remove();
   }
