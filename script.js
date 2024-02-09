@@ -1,0 +1,18 @@
+// Getting access to to the input field and list container
+const inputBox = document.getElementById("input-box");
+const listContainer = document.getElementById("list-container")
+
+function addTask(){
+  // if the input box is empty it will give the message("You must worite something") on the screen
+  if(inputBox.value === ''){
+    alert("You must write something")
+  }
+  else{
+    let li = document.createElement("li");
+    // whatever I text we add into the input field will be added into the list-container
+    li.innerHTML = inputBox.value;
+    listContainer.appendChild(li);
+
+  
+  }
+}
