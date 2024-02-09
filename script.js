@@ -20,17 +20,33 @@ function addTask(){
 
   // this will remove the list inside the input field so I can add more
   inputBox.value = '';
+  saveData();
 }
 
 listContainer.addEventListener("click", function(e){
   // When you press on any list element you will be able to mark it as done or undone
   if(e.target.tagName === "LI"){
     e.target.classList.toggle("checked")
+    saveData();
   }
 
   // if you press on the x you will remove the any list 
   else if(e.target.tagName === "SPAN") {
     e.target.parentElement.remove();
+    saveData();
   }
 },false);
 
+
+// saving the data so it doesn' disappear 
+function saveData(){
+  // whatever content that are in the list-container will be stored in our browser
+  localStorage.setItem("data", listContainer.innerHTML)
+}
+
+// display the data whenever we open or refresh our browser
+function showTask() {
+  listContainer.innerHTML = localStorage.getItem("data")
+}
+
+showTask();
