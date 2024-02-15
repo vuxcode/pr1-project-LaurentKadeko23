@@ -53,28 +53,13 @@ function showTask() {
 
 showTask();
 
+// how does locaStorage work?
+/*
+setItem(): Add key and value to localStorage
+getItem(): This is how i get items from localStorage
+itemRemove(): Remove and Item localStorage
+clear(): Clear all data from localStorage
+key(): Passed a number to retrive the key of a localStorage
 
+*/
 
-// storing data into the console
-let items = getItems()
-function getItems() {
-  const value = localStorage.getItem("todo") || "[]"
-  
-  return JSON.parse(value)
-}
-
-// once the user has set or changed an item we want to set item back 
-function setItem() {
-  const itemsJSON = JSON.stringify(items)
-  localStorage.setItem("todo", itemsJSON)
-}
-
-// adding new items
-function addItem() {
-  items.unshift({
-    // add a new item to the beginning
-    descr
-  })
-}
-
-console.log(items);
