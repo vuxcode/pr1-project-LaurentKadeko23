@@ -62,4 +62,6 @@ clear(): Clear all data from localStorage
 key(): Passed a number to retrive the key of a localStorage
 
 */
+// storing data a value in localStorage
 
+let value = localStorage.getItem("#input-box"); if(value !== null);
