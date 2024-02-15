@@ -4,6 +4,7 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container")
 
+
 function addTask(){
   // if the input box is empty it will give the message("You must worite something") on the screen
   if(inputBox.value === ''){
@@ -41,9 +42,12 @@ listContainer.addEventListener("click", function(e){
 
 
 // saving the data so it doesn' disappear 
-function saveData(){
+function saveData(inputValue){
   // whatever content that are in the list-container will be stored in our browser
-  localStorage.setItem("data", listContainer.innerHTML)
+
+  // want the value of the list container not the entire list 
+  window.localStorage.setItem("data", innerHTML)
+
 }
 
 // display the data whenever we open or refresh our browser
@@ -52,16 +56,18 @@ function showTask() {
 }
 
 showTask();
+addTask()
+function addTask() {
+  // initialsize an empty array 
+  const inputArray = [];
 
-// how does locaStorage work?
-/*
-setItem(): Add key and value to localStorage
-getItem(): This is how i get items from localStorage
-itemRemove(): Remove and Item localStorage
-clear(): Clear all data from localStorage
-key(): Passed a number to retrive the key of a localStorage
+  // Get the input elements
+  const value1  = inputBox.value;
 
-*/
-// storing data a value in localStorage
-
-let value = localStorage.getItem("#list-container");
+  // Add the values to the array
+  inputArray.push(value1)
+  // print to the console
+  console.log(inputArray)
+  showTask()
+  inputBox.value = '';
+}
