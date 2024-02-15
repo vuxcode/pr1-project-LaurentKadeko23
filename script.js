@@ -1,3 +1,5 @@
+
+
 // Getting access to to the input field and list container
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container")
@@ -50,3 +52,29 @@ function showTask() {
 }
 
 showTask();
+
+
+
+// storing data into the console
+let items = getItems()
+function getItems() {
+  const value = localStorage.getItem("todo") || "[]"
+  
+  return JSON.parse(value)
+}
+
+// once the user has set or changed an item we want to set item back 
+function setItem() {
+  const itemsJSON = JSON.stringify(items)
+  localStorage.setItem("todo", itemsJSON)
+}
+
+// adding new items
+function addItem() {
+  items.unshift({
+    // add a new item to the beginning
+    descr
+  })
+}
+
+console.log(items);
