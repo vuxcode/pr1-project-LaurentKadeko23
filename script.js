@@ -17,35 +17,45 @@ function addTask(){
     // whatever  text we add into the input field will be added into the list-container
     li.innerHTML = inputBox.value;
     listContainer.appendChild(li);
+    saveData()
       // create a plceholder element where i press the x it will delete the information
       let span = document.createElement("span")
       span.innerHTML = "\u00d7"
       li.appendChild(span)
-
+     
+    
       function addTask() {
+       
         // initialsize an empty array 
         const inputArray = [];
+      
       
         // Get the input elements
         const value1  = inputBox.value;
       
         // Add the values to the array
         inputArray.push(value1)
+
         // print to the console
         console.log(inputArray)
       
         inputBox.value = '';
-      
+        showTask()
+    
       }
-      addTask()
-  }
-
+     
+      saveData();
+      addTask();
+      
   
+  }
 
   // this will remove the list inside the input field so I can add more
   inputBox.value = '';
   saveData();
 }
+
+
 
 
 
@@ -64,18 +74,13 @@ listContainer.addEventListener("click", function(e){
 },false);
 
 
-
-// saving the data so it doesn' disappear 
-function saveData(inputValue){
-  // whatever content that are in the list-container will be stored in our browser
-
-  // want the value of the list container not the entire list 
-  window.localStorage.setItem("data", listContainer.innerHTML)
-
+function saveData() {
+  localStorage.setItem("data", listContainer.innerHTML)
 }
 
-// display the data whenever we open or refresh our browser
+
 function showTask() {
   listContainer.innerHTML = localStorage.getItem("data")
 }
 
+showTask() 
