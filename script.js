@@ -1,5 +1,7 @@
 
 
+
+
 // Getting access to to the input field and list container
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container")
@@ -19,12 +21,33 @@ function addTask(){
       let span = document.createElement("span")
       span.innerHTML = "\u00d7"
       li.appendChild(span)
+
+      function addTask() {
+        // initialsize an empty array 
+        const inputArray = [];
+      
+        // Get the input elements
+        const value1  = inputBox.value;
+      
+        // Add the values to the array
+        inputArray.push(value1)
+        // print to the console
+        console.log(inputArray)
+      
+        inputBox.value = '';
+      
+      }
+      addTask()
   }
+
+  
 
   // this will remove the list inside the input field so I can add more
   inputBox.value = '';
   saveData();
 }
+
+
 
 listContainer.addEventListener("click", function(e){
   // When you press on any list element you will be able to mark it as done or undone
@@ -41,12 +64,13 @@ listContainer.addEventListener("click", function(e){
 },false);
 
 
+
 // saving the data so it doesn' disappear 
 function saveData(inputValue){
   // whatever content that are in the list-container will be stored in our browser
 
   // want the value of the list container not the entire list 
-  window.localStorage.setItem("data", innerHTML)
+  window.localStorage.setItem("data", listContainer.innerHTML)
 
 }
 
@@ -55,19 +79,3 @@ function showTask() {
   listContainer.innerHTML = localStorage.getItem("data")
 }
 
-showTask();
-addTask()
-function addTask() {
-  // initialsize an empty array 
-  const inputArray = [];
-
-  // Get the input elements
-  const value1  = inputBox.value;
-
-  // Add the values to the array
-  inputArray.push(value1)
-  // print to the console
-  console.log(inputArray)
-  showTask()
-  inputBox.value = '';
-}
