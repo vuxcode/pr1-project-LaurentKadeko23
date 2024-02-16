@@ -12,3 +12,6 @@ For example:
 
 - 2022-10-24 18:00 Worked for 1 hour.
   - _List the things you have done._
+
+Should be finish 
+- 2024-02-16 worked on it for 2 days.
