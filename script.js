@@ -13,13 +13,13 @@ function addTask(){
     // whatever  text we add into the input field will be added into the list-container
     li.innerHTML = inputBox.value;
     listContainer.appendChild(li);
+   
     saveData()
       // create a plceholder element where i press the x it will delete the information
       let span = document.createElement("span")
       span.innerHTML = "\u00d7"
       li.appendChild(span)
      
-    
       function addTask() {
        
         // initialsize an empty array 
@@ -41,9 +41,8 @@ function addTask(){
       }
      
       saveData();
+      handleCheckBoxEvent(inputBox.value)
       addTask();
-      
-  
   }
 
   // this will remove the list inside the input field so I can add more
@@ -51,11 +50,20 @@ function addTask(){
   saveData();
 }
 
+ function handleCheckBoxEvent(value = "") {
+  listContainer.addEventListener("click", function(e){
+
+  // Check if checkbox is checked
+   if(e.target.tagName === "LI"){
+    let isChecked = e.target.classList.value === "checked";
+    console.log([value, isChecked])
+   }
+  
+},false)};
 
 
 
-
-listContainer.addEventListener("click", function(e){
+ listContainer.addEventListener("click", function(e){
   // When you press on any list element you will be able to mark it as done or undone
   if(e.target.tagName === "LI"){
     e.target.classList.toggle("checked")
@@ -70,7 +78,8 @@ listContainer.addEventListener("click", function(e){
 },false);
 
 
-function saveData() {
+function saveData(value = "") {
+
   localStorage.setItem("data", listContainer.innerHTML)
 }
 
