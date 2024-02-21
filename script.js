@@ -56,6 +56,8 @@ function addTask(){
  function handleCheckBoxEvent(value = "") {
   listContainer.addEventListener("click", function(e){
 
+
+  
   // Check if checkbox is checked
    if(e.target.tagName === "LI"){
 
@@ -67,7 +69,7 @@ function addTask(){
     }
   
    }
-  
+
 },false)};
 
 
