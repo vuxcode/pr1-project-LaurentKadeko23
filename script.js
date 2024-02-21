@@ -10,6 +10,9 @@ function addTask(){
   }
   else{
     let li = document.createElement("li");
+    const todo = inputBox.value;
+    // console.log("this is the input:", inputBox.value)
+    li.setAttribute("id", todo);
     // whatever  text we add into the input field will be added into the list-container
     li.innerHTML = inputBox.value;
     listContainer.appendChild(li);
@@ -55,8 +58,14 @@ function addTask(){
 
   // Check if checkbox is checked
    if(e.target.tagName === "LI"){
-    let isChecked = e.target.classList.value === "checked";
-    console.log([value, isChecked])
+
+    
+
+    if(e.target.id === value) {
+      let isChecked = e.target.classList.value === "checked";
+      console.log([value, isChecked])
+    }
+  
    }
   
 },false)};
