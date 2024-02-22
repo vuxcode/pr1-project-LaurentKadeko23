@@ -56,4 +56,12 @@ function renderTodos(todos) {
   if(item === true) {
     li.classList.add("checked")
   };
+
+  li.innerHTML = `
+  <input type="checkbox" class=" checkbox" ${checked} ${item.name}
+  <button class="delete-button" >X</button>
+  `
+  todoItemList.append(li)
 }
+
+// function to add todos to local storage
