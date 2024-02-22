@@ -9,13 +9,16 @@
 </head>
 <body>
   <div class="container">
-    <div class="todo-app">
-      <h1>To do list</h1>
-      <input id="input-box" type="text" placeholder="Tasks to be done">
-      <button onclick="addTask()" >Add task</button>
-      <ul id="list-container">
-      </ul>
-    </div>
+    <h1>Todo</h1>
+    <form class="todoform">
+     <input type="text" class="todo-input" placeholder="Add a todo">
+    </form>
+    <ul class="todo-items">
+      <li class="item" data-key="12220394040"></li>
+      <input class="checkbox" type="checkbox">
+      Go to gym
+      <button class="delete-button">X</button>
+    </ul>
   </div>
 
   <script src="script.js"></script>
