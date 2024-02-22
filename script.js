@@ -36,3 +36,24 @@ function addTodo(item) {
     todoInput.values = " ";
   }
 }
+
+
+function renderTodos(todos) {
+  // clear everything inside ul
+  todoItemList.innerHTML = " ";
+
+  // run trough each item inside todos
+  todos.forEach(function(item) {
+    // check if item is completed
+    const checked = item.completed ? " checked": null;
+  })
+
+  // make a li element and fill it
+  const li  = document.createElement("li")
+  li.setAttribute("class", "item");
+  li.setAttribute("data-key", item.id)
+  // if item is completed, then add a class to li called checked
+  if(item === true) {
+    li.classList.add("checked")
+  };
+}
