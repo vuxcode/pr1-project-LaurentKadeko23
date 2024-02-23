@@ -1,57 +1,29 @@
-const itemsLeft = document.getElementById("items-left")
-// get all todos 
-function addTodo() {
-  if(!todos) {
-    return null;
+// getting all todos
+
+addTodo();
+document.querySelector(".todos").addEventListener("dragover", function (e) {
+  e.preventDefault();
+  if(
+    !e.target.classList.contains("dragging") &&
+    e.target.classList.contains("card")
+  ){
+    const draggingCard = document.querySelector("dragging");
+    const currPos = cards.indexOf(draggingCard);
+    const newPos = cards.indexOf(e.target);
+    console.log(currPos, newPos);
+    if(currPos > newPos){
+      this.insertBefore(draggingCard, e.target);
+    }else{
+      this.insertBefore(draggingCard, e.target.nexSibling);
+    }
+    const todos = JSON.parse(localStorage.getItem("todos"));
+    const removed = todos.splice(currPos, 1);
+    todos.splice(newPos, 0, removed[0]);
+    localStorage.setItem("todos", JSON.stringify(todos));
   }
-}
+});
 
-// creating necessary elements
-todos.forEach(function(todo){
-  const card = document.createElement("li")
-  const cbContainer = document.createElement("div")
-  const cbInput = document.createElement("input")
-  const check = document.createElement("span")
-  const item = document.createElement("p")
-  const button = document.createElement("button")
-  const img = document.createElement("img")
-
-  // adding classes
-  card.classList.add("card");
-  button.classList.add("clear");
-  cbContainer.classList.add("cb-container");
-  cbInput.classList.add("cb-input");
-  item.classList.add("item");
-  check.classList.add("check");
-  button.classList.add("clear")
-
-  // set atrributes 
-  card.setAttribute("draggable", true);
-  img.setAttribute("src", "./assets/images/icon-cross.svg")
-  img.setAttribute("alt", "Clear it")
-  cbContainer.setAttribute("type", "checkbox");
-
-  // set todo item for card
-  item.textContent = todo.item;
-
-  // if completed -> add respective class / attributes
-
-  if(todo.isCompleted){
-    card.classList.add("checked");
-    cbContainer.setAttribute("checed", "checked")
-  }
-
-  // add click listener to chechbox 
-  cbContainer.addEventListener("click", function () {
-    const correspondingCard = this.parentElement.parentElement;
-    const checked = this.checked;
-    // state todo in localStorage 
-    stateTodo([
-      document.querySelectorAll(".todos", ".card").indexOf(correspondingCard),
-      checked
-    ]);
-    // updating class
-  })
-})
-
+// adding new todos on user input
+const add = document.getElementById("add-btn");
+const txtInput = document.querySelector(".txt-input");
 
