@@ -133,6 +133,18 @@ function addTodo(todos = JSON.parse(localStorage.getItem("todos"))) {
     check.classList.add("check");
     button.classList.add("clear");
     // Set attributes
-    
-  })
+    card.setAttribute("draggable", true);
+    img.setAttribute("src", "./assets/images/icon-cross.svg");
+    img.setAttribute("alt", "Clear it");
+    cbInput.setAttribute("type", "checkbox")
+    // set todo item for card
+    item.textContent = todo.item;
+    // if completed -> add respective class
+    if(todo.isCompleted) {
+      card.classList.add("checked");
+      cbInput.setAttribute("checked", "checked");
+    }
+    // Add drag listener to card
+  });
+  
 }
