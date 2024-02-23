@@ -145,6 +145,27 @@ function addTodo(todos = JSON.parse(localStorage.getItem("todos"))) {
       cbInput.setAttribute("checked", "checked");
     }
     // Add drag listener to card
+    card.addEventListener("dragstart", function () {
+      this.classList.add("dragging");
+    })
+
+    // Add click listener to checkbox
+    cbInput.addEventListener("click", function() {
+      const correspondingCard = this.parentElement.parentElement;
+      const checked = this.checked;
+      stateTodo(
+        [...document.querySelectorAll(".todos .card")].indexOf(
+          correspondingCard
+        ),
+        checked
+      );
+
+      checked
+      ? correspondingCard.classList.add("checked")
+      : correspondingCard.classList.remove("checked");
+      itemsLeft.textContent = document.querySelectorAll(".todos .card:not(checked)").length;
+    });
+    // Add click listener to clear button
   });
   
 }
