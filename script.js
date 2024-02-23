@@ -86,6 +86,17 @@ document
 
 // stateTodo() function to update todo about completion
 
-function stateTodo() {
-  
+function stateTodo(index, completed) {
+  const todos = JSON.parse(localStorage.getItem("todos"));
+  todos[index].isCompleted = completed;
+  localStorage.setItem("todos", JSON.stringify(todos))
 }
+
+// removingTodo() function
+function removeTodo(index) {
+  const todos = JSON.parse(localStorage.getItem("todos"));
+  todos.splice(index, 1);
+  localStorage.setItem("todos", JSON.stringify(todos));
+} 
+
+// removingManyTodo function
