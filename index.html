@@ -5,37 +5,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  
+  <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  <link rel="preload" href="assets/images/icon-check.svg" as="image" type="image/svg/xml" crossorigin="anonymous">
   <title>Todo List App</title>
 </head>
 <body>
-  
  <header class="card">
-  <h1>Todo</h1>
+  <h1>TODOS</h1>
   <button id="theme-switcher">
-    <img src="assets/images/icon-sun.svg" alt="Change color theme">
+    <img src="assets/images/icon-sun.svg" alt="">
   </button>
- </header> 
+ </header>
  <main>
-  <div class="card-add">
-    <div class="container">
+  <div class="card add">
+    <div class="cb-container">
       <button id="add-btn">+</button>
     </div>
     <div class="txt-container">
-      <label for="addtext">Create todo</label>
-      <input type="text" class="txt-input" placeholder="create a new todo..." spellcheck="false" autocomplete="off" id="addtext">
+      <label for="addt">Create todo</label>
+      <input class="txt-input" type="text" placeholder="create a new todo" spellcheck="false" autocomplete="off">
+      <div id="addt"></div>
     </div>
-  </div>
-  <ul class="todos"></ul>
-  <div class="card-stat">
-    <p class="corner"><span id="items-left">0</span> Items left</p>
-  </div>
-  <div class="filter">
-    <button id="all" class="on">All</button>
-    <button id="active">Active</button>
-    <button id="completed">Completed</button>
-  </div>
-  <div class="corner">
-    <button id="clear-completed">Clear Completed</button>
+    <ul class="todos">
+      <div class="card stat">
+        <p class="corner"><span id="items-left">0</span> items left</p>
+        <div class="filter">
+          <button id="all" class="on">All</button>
+          <button id="active">Active</button>
+          <button id="completed">completed</button>
+        </div>
+        <button id="clear-completed"></button>
+      </div>
+    </ul>
   </div>
  </main>
   <script src="script.js"></script>
