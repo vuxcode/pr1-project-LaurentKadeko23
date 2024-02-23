@@ -52,4 +52,13 @@ txtInput.addEventListener("keydown", function(e) {
 });
 
 // filter todo
-document
+document.querySelector(".filter").addEventListener("click", function(e){
+  const id = e.target.id;
+  if(id) {
+    document.querySelector(".on").classList.remove("on");
+    document.getElementById(id).classList.add("on");
+    document.querySelector(".todos")
+.className = `todos ${id}`}
+});
+
+// clear completed
