@@ -14,37 +14,37 @@
   <title>Todo List App</title>
 </head>
 <body>
- <header class="card">
+<header class="card">
   <h1>TODO</h1>
   <button id="theme-switcher">
     <img src="assets/images/icon-sun.svg" alt="">
   </button>
- </header>
- <main>
-  <div class="card add">
-    <div class="cb-container">
-      <button id="add-btn">+</button>
+  <main>
+    <div class="card add">
+      <div class="cb-container">
+        <button id="add-btn">+</button>
+      </div>
+      <div class="txt-container">
+        <input class="txt-input"
+        placeholder="Create a new todo"
+        spellcheck="false"
+        autocomplete="off"
+        type="text">
+      </div>
     </div>
-    <div class="txt-container">
-      <label for="addt">Create todo</label>
-      <input type="text" class=" txt-input" spellcheck="false" autocomplete="off" 
-      id="addt">
-    </div>
-  </div>
-  <ul class="todos"></ul>
-  <div class="card stat">
-    <p class="corner"> <span id="items-left">0 </span>Items left </p>
-    <div class="filter">
-      <button id="all" class="on">All</button>
-      <button id="active">Active</button>
-      <button id="completed">Completed</button>
-    </div>
-    <button id="clear-completed"><img src="assets/images/icon-cross.svg" alt="">Clear completed</button>
-  </div>
- </main>
- <footer>
-  <p>Your todo list</p>
- </footer>
+    <ul class="todos">
+      <div class="card stat">
+        <p class="corner"><span id="items-left">Items left</span></p>
+        <div class="filter">
+          <button id="all" class="on">All</button>
+          <button id="active">Active </button>
+          <button id="completed">Completed</button>
+        </div>
+        <div class="corner">Clear completed</div>
+      </div>
+    </ul>
+  </main>
+</header>
   <script src="script.js"></script>
 </body>
 </html>
