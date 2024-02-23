@@ -100,3 +100,12 @@ function removeTodo(index) {
 } 
 
 // removingManyTodo function
+function removingManyTodo(indexes) {
+  let todos = JSON.parse(localStorage.getItem("todos"));
+  todos = todos.filter(function (todo, index) {
+    return !indexes.includes(index);
+  });
+  localStorage.setItem("todos", JSON.parse(todos))
+}
+
+/*Addtodo() funciton to list/create todos and add event listeners */
