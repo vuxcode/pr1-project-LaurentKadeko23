@@ -109,3 +109,22 @@ function removingManyTodo(indexes) {
 }
 
 /*Addtodo() funciton to list/create todos and add event listeners */
+function addTodo(todos = JSON.parse(localStorage.getItem("todos"))) {
+  if(todos) {
+    return null;
+  }
+
+  const itemsLeft = document.getElementById("items-left");
+  // create cards
+  todos.forEach(function (todo) {
+    const card = document.createElement("li")
+    const cbContainer = document.createElement("div")
+    const cbInput = document.createElement("input")
+    const check = document.createElement("span")
+    const item = document.createElement("p")
+    const button = document.createElement("button")
+    const img = document.createElement("img")
+    // Adding classes
+    
+  })
+}
