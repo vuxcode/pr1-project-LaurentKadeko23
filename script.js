@@ -1,6 +1,27 @@
-
+const itemsLeft = document.getElementById("items-left")
 // get all todos 
-addTodo()
+function addTodo() {
+  if(!todos) {
+    return null;
+  }
+}
+
+// creating necessary elements
+todos.forEach(function(todo){
+  const card = document.createElement("li")
+  const cbContainer = document.createElement("div")
+  const cbInput = document.createElement("input")
+  const check = document.createElement("span")
+  const item = document.createElement("p")
+  const button = document.createElement("button")
+  const img = document.createElement("img")
+
+  // adding classes
+  
+
+})
+
+
 // drag over on .todos container
 document.querySelector(".todos").addEventListener("dragover"), function(e) {
   e.preventDefault();
@@ -25,3 +46,22 @@ document.querySelector(".todos").addEventListener("dragover"), function(e) {
 }
 
 // addd new todos on user input
+const add = document.getElementById("add-btn");
+const txtInput = document.querySelector(".txt-input");
+add.addEventListener("click", function() {
+  const item = txtInput.value.trim();
+  if(item) {
+    txtInput.value = " ";
+    const todos = !localStorage.getItem("todos")
+    ? []
+    :JSON.parse(localStorage.getItem("todos"));
+    const currentTodo = {
+      item,
+      isCompleted: false,
+    };
+    addTodo([currentTodo]);
+    todos.push(currentTodo);
+    localStorage.setItem("todos", JSON.stringify(todos))
+  }
+  txtInput.focus();
+})
