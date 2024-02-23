@@ -125,6 +125,14 @@ function addTodo(todos = JSON.parse(localStorage.getItem("todos"))) {
     const button = document.createElement("button")
     const img = document.createElement("img")
     // Adding classes
+    card.classList.add("card");
+    button.classList.add("clear");
+    cbContainer.classList.add("cb-container");
+    cbInput.classList.add("cb-input");
+    item.classList.add("item");
+    check.classList.add("check");
+    button.classList.add("clear");
+    // Set attributes
     
   })
 }
