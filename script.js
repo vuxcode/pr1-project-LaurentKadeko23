@@ -42,6 +42,16 @@ todos.forEach(function(todo){
   }
 
   // add click listener to chechbox 
+  cbContainer.addEventListener("click", function () {
+    const correspondingCard = this.parentElement.parentElement;
+    const checked = this.checked;
+    // state todo in localStorage 
+    stateTodo([
+      document.querySelectorAll(".todos", ".card").indexOf(correspondingCard),
+      checked
+    ]);
+    // updating class
+  })
 })
 
 
