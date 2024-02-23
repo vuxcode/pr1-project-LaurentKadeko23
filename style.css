@@ -247,3 +247,25 @@ body.light .stat {
 .stat .corner button:hover {
   color: var(--clr-primary);
 }
+
+.stat .filter {
+  display: flex;
+  justify-content: space-between;
+  font-weight: var(--fw-bold);
+}
+
+.stat .filter *:hover {
+  color: var(--clr-primary);
+}
+
+.stat .filter .on {
+  color: var(--clr-blue);
+}
+
+footer {
+  margin: 4rem 0;
+  text-align: center;
+  color: var(--clr-gb-5);
+}
+
+/* javaScipt functions -STYLES */
