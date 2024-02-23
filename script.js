@@ -26,4 +26,30 @@ document.querySelector(".todos").addEventListener("dragover", function (e) {
 // adding new todos on user input
 const add = document.getElementById("add-btn");
 const txtInput = document.querySelector(".txt-input");
+add.addEventListener("click", function () {
+  const item = txtInput.value.trim() ;
+  if(item) {
+    txtInput.value = " ";
+    const todos = !localStorage.getItem("todos")
+    ? []
+    : JSON.parse(localStorage.getItem("todos"));
+    const currentTodo = {
+      item,
+      isCompleted: false
+    };
+    addTodo([currentTodo])
+    todos.push(currentTodo);
+    localStorage.setItem("todos", JSON.stringify(todos))
+  }
+  txtInput.focus();
+})
 
+// add todo also on enter key
+txtInput.addEventListener("keydown", function(e) {
+  if(e.keyCode === 14) {
+    add.click();
+  }
+});
+
+// filter todo
+document
