@@ -15,7 +15,7 @@
 </head>
 <body>
  <header class="card">
-  <h1>TODOS</h1>
+  <h1>TODO</h1>
   <button id="theme-switcher">
     <img src="assets/images/icon-sun.svg" alt="">
   </button>
@@ -23,24 +23,25 @@
  <main>
   <div class="card add">
     <div class="cb-container">
+      <input type="check" class="cb-input">
+      <span class="check"></span>
       <button id="add-btn">+</button>
     </div>
     <div class="txt-container">
       <label for="addt">Create todo</label>
-      <input class="txt-input" type="text" placeholder="create a new todo" spellcheck="false" autocomplete="off">
-      <div id="addt"></div>
+      <input type="text" class=" txt-input" spellcheck="false" autocomplete="off" 
+      id="addt">
     </div>
-    <ul class="todos">
-      <div class="card stat">
-        <p class="corner"><span id="items-left">0</span> items left</p>
-        <div class="filter">
-          <button id="all" class="on"> All</button>
-          <button id="active"> Active</button>
-          <button id="completed">completed</button>
-        </div>
-        <button id="clear-completed"></button>
-      </div>
-    </ul>
+  </div>
+  <ul class="todos"></ul>
+  <div class="card stat">
+    <p class="corner"> <span id="items-left">0 </span>Items left </p>
+    <div class="filter">
+      <button id="all" class="on">All</button>
+      <button id="active">Active</button>
+      <button id="completed">Completed</button>
+    </div>
+    <button id="clear-completed"><img src="assets/images/icon-cross.svg" alt="">Clear completed</button>
   </div>
  </main>
  <footer>

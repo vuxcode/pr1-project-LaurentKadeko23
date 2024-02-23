@@ -93,7 +93,7 @@ label{
   gap: 2rem;
 }
 
-header .card{
+header.card{
   background: transparent;
   padding: 0;
   align-items: flex-start;
@@ -101,14 +101,14 @@ header .card{
 
 header.card h1{
   color: var(--clr-white);
-  font-weight: 700px;
+  font-weight: bold;
   font-size: calc(var(--base-font) * 2);
 }
 
 .card .cb-container{
   width: 25px;
   height: 24px;
-  border: 0.1px solid var(--clr-gb-5);
+  border: 0.1rem solid var(--clr-gb-5);
   border-radius: 50%;
   display: flex;
   align-items: center;
