@@ -269,3 +269,52 @@ footer {
 }
 
 /* javaScipt functions -STYLES */
+/* filter todos */
+
+.todos.active .card.checked,
+.todos.completed .card {
+  transition: 0.4s;
+  opacity: 0;
+  padding: 0;
+  border: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.todos.completed .card.checked {
+  opacity: 1;
+  padding: 1.9rem 2rem;
+  height: auto;
+  display: flex;
+  pointer-events: all;
+  transition: 0.4s;
+}
+
+.todos.completed > .card.checked ~ .card.checked {
+  border-top: 0.2rem solid var(--clr-gb-6);
+}
+
+/* fall Animation */
+.todos .card.fall{
+  pointer-events: none;
+  animation: fall 0.2s forwards ease;
+}
+
+@keyframes fall{
+  0%{
+      opacity: 0.5;
+      transform: translateX(20%);
+  }
+
+  50%{
+    transform: translateX(25%) rotateZ(40deg);
+    opacity: 0.3;
+  }
+
+  100%{
+    transform: translateX(30%) rotateZ(90deg);
+    opacity: 0;
+  }
+}
+
+/* drag and drop */
