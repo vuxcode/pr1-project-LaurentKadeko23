@@ -9,7 +9,35 @@
 </head>
 <body>
   
-     
+ <header class="card">
+  <h1>Todo</h1>
+  <button id="theme-switcher">
+    <img src="assets/images/icon-sun.svg" alt="Change color theme">
+  </button>
+ </header> 
+ <main>
+  <div class="card-add">
+    <div class="container">
+      <button id="add-btn">+</button>
+    </div>
+    <div class="txt-container">
+      <label for="addtext">Create todo</label>
+      <input type="text" class="txt-input" placeholder="create a new todo..." spellcheck="false" autocomplete="off" id="addtext">
+    </div>
+  </div>
+  <ul class="todos"></ul>
+  <div class="card-stat">
+    <p class="corner"><span id="items-left">0</span> Items left</p>
+  </div>
+  <div class="filter">
+    <button id="all" class="on">All</button>
+    <button id="active">Active</button>
+    <button id="completed">Completed</button>
+  </div>
+  <div class="corner">
+    <button id="clear-completed">Clear Completed</button>
+  </div>
+ </main>
   <script src="script.js"></script>
 </body>
 </html>
