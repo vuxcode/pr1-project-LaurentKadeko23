@@ -1,6 +1,6 @@
 // getting all todos
+function main() {
 
-addTodo();
 document.querySelector(".todos").addEventListener("dragover", function (e) {
   e.preventDefault();
   if(
@@ -24,6 +24,7 @@ document.querySelector(".todos").addEventListener("dragover", function (e) {
 });
 
 // adding new todos on user input
+addTodo();
 const add = document.getElementById("add-btn");
 const txtInput = document.querySelector(".txt-input");
 add.addEventListener("click", function () {
@@ -62,3 +63,29 @@ document.querySelector(".filter").addEventListener("click", function(e){
 });
 
 // clear completed
+document
+.getElementById("clear-completed")
+.addEventListener("click", function (){
+  deleteIndexes = [];
+  document.querySelectorAll(".card.checkd").
+  forEach(function (card){
+    deleteIndexes.push(
+      [document.querySelectorAll(".todos .card")].indexOf(card)
+    )
+    card.classList.add("fall");
+    card.addEventListener("animationend"),
+    function (e){
+      setTimeout(function () {
+        card.remove();
+      }, 100)
+    }
+  })
+    removeManyTodo(deleteIndexes)
+  })
+}
+
+// stateTodo() function to update todo about completion
+
+function stateTodo() {
+  
+}
