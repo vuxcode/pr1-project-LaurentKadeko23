@@ -1,49 +1,57 @@
+document.addEventListener("DOMContentLoaded", main);
 // getting all todos
 function main() {
+  addTodo();
 
-document.querySelector(".todos").addEventListener("dragover", function (e) {
-  e.preventDefault();
-  if(
-    !e.target.classList.contains("dragging") &&
-    e.target.classList.contains("card")
-  ){
-    const draggingCard = document.querySelector("dragging");
-    const currPos = cards.indexOf(draggingCard);
-    const newPos = cards.indexOf(e.target);
-    console.log(currPos, newPos);
-    if(currPos > newPos){
-      this.insertBefore(draggingCard, e.target);
-    }else{
-      this.insertBefore(draggingCard, e.target.nexSibling);
+  
+
+  //get alltodos and initialise listeners
+  addTodo();
+  // dragover on .todos container
+  document.querySelector(".todos").addEventListener("dragover", function (e) {
+    e.preventDefault();
+    if (
+      !e.target.classList.contains("dragging") &&
+      e.target.classList.contains("card")
+    ) {
+      const draggingCard = document.querySelector(".dragging");
+      const cards = [...this.querySelectorAll(".card")];
+      const currPos = cards.indexOf(draggingCard);
+      const newPos = cards.indexOf(e.target);
+      console.log(currPos, newPos);
+      if (currPos > newPos) {
+        this.insertBefore(draggingCard, e.target);
+      } else {
+        this.insertBefore(draggingCard, e.target.nextSibling);
+      }
+      const todos = JSON.parse(localStorage.getItem("todos"));
+      const removed = todos.splice(currPos, 1);
+      todos.splice(newPos, 0, removed[0]);
+      localStorage.setItem("todos", JSON.stringify(todos));
     }
-    const todos = JSON.parse(localStorage.getItem("todos"));
-    const removed = todos.splice(currPos, 1);
-    todos.splice(newPos, 0, removed[0]);
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }
-});
+  });
 
-// adding new todos on user input
-addTodo();
+// add new todos on user input
 const add = document.getElementById("add-btn");
 const txtInput = document.querySelector(".txt-input");
 add.addEventListener("click", function () {
-  const item = txtInput.value.trim() ;
-  if(item) {
-    txtInput.value = " ";
+  const item = txtInput.value.trim();
+  if (item) {
+    txtInput.value = "";
     const todos = !localStorage.getItem("todos")
-    ? []
-    : JSON.parse(localStorage.getItem("todos"));
+      ? []
+      : JSON.parse(localStorage.getItem("todos"));
     const currentTodo = {
       item,
-      isCompleted: false
+      isCompleted: false,
     };
-    addTodo([currentTodo])
+    addTodo([currentTodo]);
     todos.push(currentTodo);
-    localStorage.setItem("todos", JSON.stringify(todos))
+    localStorage.setItem("todos", JSON.stringify(todos));
   }
   txtInput.focus();
-})
+});
+
 
 // add todo also on enter key
 txtInput.addEventListener("keydown", function(e) {
@@ -109,6 +117,7 @@ function removingManyTodo(indexes) {
 }
 
 /*Addtodo() funciton to list/create todos and add event listeners */
+
 function addTodo(todos = JSON.parse(localStorage.getItem("todos"))) {
   if(todos) {
     return null;
@@ -166,6 +175,28 @@ function addTodo(todos = JSON.parse(localStorage.getItem("todos"))) {
       itemsLeft.textContent = document.querySelectorAll(".todos .card:not(checked)").length;
     });
     // Add click listener to clear button
-  });
+    button.addEventListener("click", function() {
+      const correspondingCard = this.parentElement;
+      correspondingCard.classList.add("fall");
+      removeTodo(
+        [document.querySelectorAll(".todos .card").indexOf](
+          correspondingCard
+        )
+      )
+      correspondingCard.addEventListener("animationend", function() {
+        setTimeout(function () {
+          correspondingCard.remove();
+          itemsLeft.textContent = document.querySelectorAll(".todos .card:not(.checked)").length;
+        }, 100);
+      })
+    });
+    // prent.appendChild(child)
+    button.appendChild(img);
+    cbContainer.appendChild(cbInput);
+    cbContainer.appendChild(check);
+    card.appendChild(item);
+    card.appendChild(button);
+    document.querySelector(".todos").appendChild(".todos .card:not(.checked)")
+  }.length);
   
 }
