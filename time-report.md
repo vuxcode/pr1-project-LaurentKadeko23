@@ -14,4 +14,4 @@ For example:
   - _List the things you have done._
 
 Should be finish 
-- 2024-02-16 worked on it for 2 days.
+- 2024-02-24 took a week to make it functional.

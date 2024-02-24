@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", main);
 // getting all todos
 function main() {
-  addTodo();
+
 
   
 

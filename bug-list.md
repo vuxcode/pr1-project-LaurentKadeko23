@@ -17,3 +17,13 @@ new problems
 2. when I fixed the first problem 2 others came. the button function that alert that I need to write something stoped working. the problem was quite easy because the order of the code was wrong. So I needed to put it in the right order. the same thing was with the third problem.
 
 3. The localStorage stoped working it showed that I didn't call the function and when I did I put it in wrong order.
+
+-- new updates
+I changed the layout and design to actually look and feel like it is supposed to. luckily I found an old design that I did when I studied Game development at Folkhögskola, Vetlanda. Before we learned c# we learned javascript because you can make games with it and it is more easier to start with.
+It was really challenging but fun to do. And learned a lot.
+
+the coding took so much time, but it was not acualliy that difficult, you just need to know how to search and also know your design and layout, also how you want your design to work. It also helped me to understand how you can create reusable variable in css instead of always type the same thing over and over again.
+
+Another hard thing was animation. It took so much time and problem solving to try understand how animation works in javaascript compares to c# but once you undestand it, it becomes much easier and it is also not that difficult to understand.
+
+but the most valauable lesson that I learned in this project was not to rush, instead understand your design and layout, not just the frontend but also have a strong image on how it's going to work and how you want it to work. 
