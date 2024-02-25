@@ -29,3 +29,4 @@ so in this project. You will be able to add, check, save, and delete all saved t
 3. saving will be hard because there is no savings in this project.
 4. You can now change between save and active. In active you can see what tasks are still needed to be done.
 5. You can also clear all the completed tasks.
+6. You can also rearrange the list. for example, if you have 100 lists you can change the order.
