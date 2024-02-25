@@ -18,7 +18,7 @@ The final program is not the goal! The project aims to show how you have develop
 
 > Before the final submission date you should include a "PROJECT SUMMARY" in this section here.
 
-so in this project. You will be able to add, check, and uncheck tasks that you want to do for example. You have plans to meet some friends or shop for clothes for school or work.
+so in this project. You will be able to add, check, save, and delete all saved tasks and uncheck tasks that you want to do for example. You have plans to meet some friends or shop for clothes for school or work.
 
 # User Guide
 
