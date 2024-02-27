@@ -43,7 +43,7 @@ add.addEventListener("click", function () {
       : JSON.parse(localStorage.getItem("todos"));
     const currentTodo = {
       item,
-      Completed: false,
+      isCompleted: false,
     };
     addTodo([currentTodo]);
     todos.push(currentTodo);
