@@ -84,7 +84,7 @@ header.card {
 }
 
 header.card h1 {
-  color: var(--clr-white);
+  color: var(--clr-gb-3);
   letter-spacing: 1.3rem;
   font-weight: 700;
   font-size: calc(var(--base-font) * 2);
