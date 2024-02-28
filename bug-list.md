@@ -19,7 +19,7 @@ new problems
 3. The localStorage stoped working it showed that I didn't call the function and when I did I put it in wrong order.
 
 -- new updates
-I changed the layout and design to actually look and feel like it is supposed to. luckily I found an old design that I did when I studied Game development at Folkhögskola, Vetlanda. Before we learned c# we learned javascript because you can make games with it and it is more easier to start with.
+I changed the layout and design to actually look and feel like it is supposed to.
 It was really challenging but fun to do. And learned a lot.
 
 the coding took so much time, but it was not acualliy that difficult, you just need to know how to search and also know your design and layout, also how you want your design to work. It also helped me to understand how you can create reusable variable in css instead of always type the same thing over and over again.
